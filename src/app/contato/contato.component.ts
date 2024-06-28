@@ -25,7 +25,7 @@ export class ContatoComponent implements OnInit {
       Validators.required
     ]],
     mensagem:["",[
-      Validators.min(20),
+      Validators.minLength(20),
       Validators.required
     ]]
   })
@@ -36,6 +36,11 @@ export class ContatoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+  }
+
+  enviarFormulario(){
+    alert("A mensagem foi enviada")
+    this.formContato.reset()
   }
 
 }
